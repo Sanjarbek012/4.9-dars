@@ -25,11 +25,11 @@ exports.getAll = (req, res) => {
 // GET ONE
 exports.getOne = (req, res) => {
   const products = readData();
-  const product = products.find(p => p.id == req.params.id);
+  const product = products.find(p => p.id === Number(req.params.id));;
 
   if (!product) return res.send("Topilmadi");
 
-  res.render("show", { product });
+  res.render( { product });
 };
 
 // POST

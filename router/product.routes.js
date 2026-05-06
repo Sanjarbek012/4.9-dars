@@ -9,17 +9,19 @@ const {
   remove
 } = require("../controller/product.controller");
 
-// pages
+// GET ALL
 router.get("/", getAll);
-router.get("/product/:id", getOne);
 
-// create
+// GET ONE
+router.get("/:id", getOne);
+
+// CREATE
 router.post("/add", create);
 
-// update
+// UPDATE
 router.post("/edit/:id", update);
 
-// delete
+// DELETE
 router.get("/delete/:id", remove);
 
 module.exports = router;
